@@ -1,0 +1,78 @@
+﻿<Window x:Class="_20230201.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_20230201"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition MinHeight="60" MaxHeight="90"/>
+            <RowDefinition/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="txtRed" Grid.Column="0" Content="0"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Slider x:Name="sliPiros" Minimum="0" Maximum="255" Grid.Column="1" 
+                VerticalAlignment="Center" ValueChanged="sliRGB_ValueChanged"/>
+        <Label Grid.Column="2" Content="Piros"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Label x:Name="txtGreen" Grid.Column="0" Content="0"  Grid.Row="1"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Slider x:Name="sliZold" Minimum="0" Maximum="255" Grid.Row="1"  Grid.Column="1" 
+                VerticalAlignment="Center" ValueChanged="sliRGB_ValueChanged"/>
+        <Label Grid.Column="2" Content="Zöld"  Grid.Row="1"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        <Label x:Name="txtBlue" Grid.Column="0" Content="0"  Grid.Row="2"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Slider x:Name="sliKek" Minimum="0" Maximum="255" Grid.Row="2"  Grid.Column="1" 
+                VerticalAlignment="Center" ValueChanged="sliRGB_ValueChanged"/>
+        <Label Grid.Column="2" Content="Kék"  Grid.Row="2"
+               VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+
+        <Grid Grid.Row="3"
+              Grid.ColumnSpan="3"
+              Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnRogzit"
+                    Grid.Column="0" Content="Rögzít" Click="btnRogzit_Click"/>
+            <Button x:Name="btnTorol"
+                    Grid.Column="1" Content="Türül" Click="btnTorol_Click"/>
+            <Button x:Name="btnUrit"
+                    Grid.Column="2" Content="Ürít" Click="btnUrit_Click"/>
+            
+
+        </Grid>
+
+        <ListBox x:Name="lbSzinek"
+                 Background="LightGoldenrodYellow"
+                 Grid.ColumnSpan="3"
+                 Margin="5"
+                 Grid.Row="4" MouseDoubleClick="lbSzinek_MouseDoubleClick"/>
+
+        <Rectangle x:Name="rctTeglalap" 
+                   Grid.Row="5" 
+                   Grid.ColumnSpan="3" 
+                   Fill="Black" 
+                   Margin="10"/>
+        
+    </Grid>
+</Window>
